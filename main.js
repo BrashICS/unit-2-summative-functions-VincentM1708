@@ -23,6 +23,7 @@ function round(value, decimals) {
 function round_user(value) {
     // Get the number of decimals from the "rounding" box
     let d = Number(document.getElementById("rounding").value)
+    return 
 
 }
 
@@ -38,5 +39,21 @@ function zeros() {
 // Determine the vertex of a quadratic using user-inputs for a, b, and c
 function vertex() {
 
+}
+
+
+//DELTA FUNCTION
+function delta(a,b) {
+    return a - b
+}
+
+//SLOPE FUNCTION 
+function slope(x1, y1, x2, y2) {
+    return delta(y2,y1)/delta(x2,x1)
+}
+
+//AVERAGE FUNCTION
+function average(n1, n2) {
+    return (n1 + n2)/2
 }
 
