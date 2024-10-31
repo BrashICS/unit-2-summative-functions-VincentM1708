@@ -20,7 +20,7 @@
         
         <p>
             Round answers to the nearest
-            <input type="number" id="rounding" value="4" placeholder="0" min="0" max="10"  class="short_number">
+            <input type="number" id="rounding" value="1" placeholder="1" min="0" max="10"  class="short_number">
             decimals.
         </p>
 
@@ -42,12 +42,47 @@
             Radius = 
             <input id="radius" type="number" value="1" placeholder="1" autocomplete="off" class="short_number"> &nbsp;
 
-<br>
-<br>
-            <button id=rect_output>Calculate the Volume of a Rectangular Prism</button>
+<br><br>
+<!--Output for rect volume-->
+
+
+        <button id="rect_area_output">Calculate the Volume of a Rectangular Prism</button> The volume of the rectangular prism is : <span id ="volume"></span>
+
+<br><br>
+        <button id="rect_surface_output">Calculate the Surface Area of a Rectangular Prism</button> The volume of the rectangular prism is : <span id ="surface"></span>
+
+        <br><br>
+        <button id="sphere_volume_output">Calculate the Volume of a Sphere</button> The Volume of a Sphere is : <span id ="svolume"></span>
+
+        <br><br>
+        <button id="sphere_area_output">Calculate the Surface Area of a Sphere</button> The Surface Area of a Sphere is : <span id="sarea"></span>
+        <!--Volume =
+        input id="area_volume" type="number" value="1" placeholder="1" autocomplete="off" class="short_number"> &nbsp;
+        -->
         </div>
         
         <hr>
+
+        <div>
+            <!--SLOPE CONTENTS-->
+            <h3>Please input the values of the points : "x1, y1, x2, y2" In the following boxes</h3>
+            X1 =
+            <input id="x1" type="number" value="1" placeholder="1" autocomplete="off" class="short_number"> &nbsp;
+            
+            Y1 =
+            <input id="y1" type="number" value="1" placeholder="1" autocomplete="off" class="short_number"> &nbsp;
+
+            X2 = 
+            <input id="x2" type="number" value="1" placeholder="1" autocomplete="off" class="short_number"> &nbsp;
+
+            Y2 = 
+            <input id="y2" type="number" value="1" placeholder="1" autocomplete="off" class="short_number"> &nbsp;
+
+<br><br>
+
+            <button id="slope_output">Calculate the slope of a line</button> The slope of your line is : <span id="mslope"></span>
+
+        </div>
 
         <!-- Quadratics -->
         <div>
@@ -67,7 +102,8 @@
 
             <button id="zeros">Find the Zeros</button> 
             <button id="vertex">Find the Vertex</button>
-
+            
+            
             <!-- Output for the zeros or vertex -->
             <div id="quadratic_output"></div>
         </div>

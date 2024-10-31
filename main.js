@@ -12,6 +12,23 @@
 document.getElementById("zeros").addEventListener("click", zeros);
 document.getElementById("vertex").addEventListener("click", vertex);
 
+//RECTANGULAR PRISM
+document.getElementById("rect_area_output").addEventListener("click", rect_prism_area);
+document.getElementById("rect_surface_output").addEventListener("click", rect_surface_area);
+
+
+//SPHERE
+document.getElementById("sphere_volume_output").addEventListener("click", sphere_volume);
+document.getElementById("sphere_area_output").addEventListener("click", sphere_area);
+
+
+//SLOPE
+document.getElementById("slope_output").addEventListener("click", slope_line);
+
+//.textcontent
+//document.getElementById("rect_area_output").addEventListener("click",rect_prism_area)
+//document.getElementById("rect_area_output").addEventListener(onclick, rect_prism_area)
+
 /*** Functions ***/
 
 // Round to the nearest `decimals` number of decimals
@@ -69,6 +86,53 @@ function length(x1, y1, x2, y2) {
 
 // #7
 function rect_prism_area() {
-    return round_user(width*height*length)
+    let length = Number(document.getElementById("length").value);
+    let width = Number(document.getElementById("width").value);
+    let height = Number(document.getElementById("height").value);
+    let volume = round_user( width * height * length)
+    document.getElementById("volume").textContent = `${volume}`
+    return round_user(width* height *length);
+}
 
+//#8
+function rect_surface_area() {
+    let length = Number(document.getElementById("length").value);
+    let width = Number(document.getElementById("width").value);
+    let height = Number(document.getElementById("height").value);
+    let surface = round_user(2*(width*length + height*length + height*width));
+    document.getElementById("surface").textContent = `${surface}`
+    return round_user(2*(width*length + height*length + height*width));
+}
+
+//#9
+function sphere_volume() {
+    let radius = Number(document.getElementById("radius").value);
+    let svolume = round_user(4/3*(Math.PI*radius**3));
+    document.getElementById("svolume").textContent = `${svolume}`
+    return round_user(4/3*(Math.PI*radius**3));
+}
+
+
+
+//ALSO #9
+function sphere_area() {
+    let radius = Number(document.getElementById("radius").value);
+    let sarea = round_user(4*Math.PI*radius**2);
+    document.getElementById("sarea").textContent = `${sarea}`
+    return round_user(4*Math.PI*radius**2);
+}
+
+
+//#10 Completed just boxes of x1, y1, x2, y2
+
+
+//#11
+function slope_line() {
+    let x1 = Number(document.getElementById("x1").value);
+    let y1 = Number(document.getElementById("y1").value);
+    let x2 = Number(document.getElementById("x2").value);
+    let y2 = Number(document.getElementById("y2").value);
+    let mslope = round_user(slope(x1, y1, x2, y2));
+    document.getElementById("mslope").textContent = `${mslope}`
+    return mslope;
 }
