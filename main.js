@@ -25,9 +25,12 @@ document.getElementById("sphere_area_output").addEventListener("click", sphere_a
 //SLOPE
 document.getElementById("slope_output").addEventListener("click", slope_line);
 
-//.textcontent
-//document.getElementById("rect_area_output").addEventListener("click",rect_prism_area)
-//document.getElementById("rect_area_output").addEventListener(onclick, rect_prism_area)
+//LENGTH OF LINE
+document.getElementById("length_output").addEventListener("click", line_length);
+
+//MIDPOINT
+document.getElementById("midpoint_output").addEventListener("click", midpoint);
+
 
 /*** Functions ***/
 
@@ -75,7 +78,7 @@ function average(n1, n2) {
 }
 
 // #5 LINE SEGMENT FUNCTION
-function length(x1, y1, x2, y2) {
+function leng(x1, y1, x2, y2) {
     return Math.sqrt((delta(x2, x1)**2 + delta(y2, y1)**2));
 }
 
@@ -126,7 +129,7 @@ function sphere_area() {
 //#10 Completed just boxes of x1, y1, x2, y2
 
 
-//#11
+//#11 Slope
 function slope_line() {
     let x1 = Number(document.getElementById("x1").value);
     let y1 = Number(document.getElementById("y1").value);
@@ -135,4 +138,25 @@ function slope_line() {
     let mslope = round_user(slope(x1, y1, x2, y2));
     document.getElementById("mslope").textContent = `${mslope}`
     return mslope;
+}
+
+//#11 Line Length
+function line_length() {
+    let x1 = Number(document.getElementById("x1").value);
+    let y1 = Number(document.getElementById("y1").value);
+    let x2 = Number(document.getElementById("x2").value);
+    let y2 = Number(document.getElementById("y2").value);
+    let dl = round_user(leng(x1, y1, x2, y2));
+    document.getElementById("dl").textContent = `${dl}`
+    return dl;
+}
+
+function midpoint() {
+    let x1 = Number(document.getElementById("x1").value);
+    let y1 = Number(document.getElementById("y1").value);
+    let x2 = Number(document.getElementById("x2").value);
+    let y2 = Number(document.getElementById("y2").value);
+    let averagex = round_user(average(x1, x2));
+    let averagey = round_user(average(y1, y2));
+    document.getElementById("midpoint").textContent = `(${averagex}, ${averagey})`;
 }
