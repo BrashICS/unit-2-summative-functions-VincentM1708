@@ -160,3 +160,40 @@ function midpoint() {
     let averagey = round_user(average(y1, y2));
     document.getElementById("midpoint").textContent = `(${averagex}, ${averagey})`;
 }
+
+//PART 2 QUADRATICS
+//Get y-value of a parabola from standarm form
+function y_value(a, b, c, x) {
+    let y = a*x**2 + (b*x) + c;
+    return y;
+}
+
+//get zeros of a quadratic from user-inputs for a, b and c
+function zeros() {
+    let a = Number(document.getElementById("a").value);
+    let b = Number(document.getElementById("b").value);
+    let c = Number(document.getElementById("c").value);
+
+    let zero_plus = round_user((-b + Math.sqrt((b**2)-4 * a * c))/2 * a);
+    let zero_minus = round_user((-b - Math.sqrt((b**2) -4 * a *c))/2 * a);
+
+    console.log(`${zero_plus}, ${zero_minus}`);
+
+    document.getElementById("quadratic_output").textContent = `The zeros are: x = ${zero_plus} and x = ${zero_minus}`;
+}
+
+
+//get vertex of a quadract from user-inputs for a, b and c
+function vertex() {
+    let a = Number(document.getElementById("a").value);
+    let b = Number(document.getElementById("b").value);
+    let c = Number(document.getElementById("c").value);
+
+    let x = round_user(y_value(a, b, c, round_user(-b /2*a)));
+
+    console.log(`(${round_user(-b /2 *a)}, ${x})`);
+
+    document.getElementById("quadratic_output").textContent = 
+    `The vertex is: (${round_user(-b /2 *a)}, ${x})`;
+}
+
