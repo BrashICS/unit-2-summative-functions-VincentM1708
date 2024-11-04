@@ -176,10 +176,10 @@ function zeros() {
 
     let zero_plus = round_user((-b + Math.sqrt((b**2)-4 * a * c))/2 * a);
     let zero_minus = round_user((-b - Math.sqrt((b**2) -4 * a *c))/2 * a);
+    
+    console.log(zero_plus + zero_minus);
 
-    console.log(`${zero_plus}, ${zero_minus}`);
-
-    document.getElementById("quadratic_output").textContent = `The zeros are: x = ${zero_plus} and x = ${zero_minus}`;
+    document.getElementById("quadratic_output").textContent = (`The zeros are: x = ${zero_plus} and x = ${zero_minus}`);
 }
 
 
